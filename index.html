@@ -70,10 +70,15 @@
 
   <!-- CountAPI script -->
   <script>
-    fetch('https://api.countapi.xyz/hit/jianfengcailab/visits')
+    const url = 'https://api.countapi.xyz/hit/jianfengcailabcom/homepage';
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         document.getElementById('visit-count').textContent = data.value;
+      })
+      .catch(err => {
+        console.error('CountAPI error:', err);
+        document.getElementById('visit-count').textContent = 'N/A';
       });
   </script>
 
