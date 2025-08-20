@@ -5,6 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jianfeng Cai Research Group</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: flex;
+      background-color: #ffffff;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Image container */
+    .slide-image {
+      width: 600px;
+      height: 400px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .slide-image img {
+      max-width: 100%;
+      max-height: 100%;
+      cursor: pointer;
+    }
+
+    /* Text container */
+    .slide-text {
+      width: 300px;
+      padding: 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-text p {
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    /* Navigation arrows */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 0.5rem;
+      margin-top: -1rem;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: 0.3s;
+      user-select: none;
+      background-color: rgba(255,255,255,0.7);
+      border-radius: 50%;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(200,200,200,0.8);
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
+  </style>
 </head>
 <body>
   <!-- Banner -->
@@ -27,6 +91,13 @@
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
+
+  <!-- Slideshow Section -->
+  <div class="slideshow-container" id="slideshow">
+    <!-- Slides will be inserted here by JavaScript -->
+    <div class="prev" onclick="changeSlide(-1)">&#10094;</div>
+    <div class="next" onclick="changeSlide(1)">&#10095;</div>
+  </div>
 
   <!-- Main Content -->
   <main class="content">
@@ -64,22 +135,95 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>Page visits: <span id="visit-count">0</span></p>
     <p>&copy; 2025 Jianfeng Cai Research Group</p>
+
+    <!-- StatCounter Widget -->
+    <div class="statcounter">
+      <script type="text/javascript">
+        var sc_project=4842413; 
+        var sc_invisible=0; 
+        var sc_partition=56; 
+        var sc_click_stat=1; 
+        var sc_security="1e890492"; 
+      </script>
+      <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+      <noscript>
+        <div class="statcounter">
+          <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+            <img class="statcounter" src="https://c.statcounter.com/4842413/0/1e890492/0/" alt="Web Analytics">
+          </a>
+        </div>
+      </noscript>
+    </div>
   </footer>
 
-  <!-- CountAPI script -->
+  <!-- Slideshow JavaScript -->
   <script>
-    const url = 'https://api.countapi.xyz/hit/jianfengcailabcom/homepage';
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('visit-count').textContent = data.value;
-      })
-      .catch(err => {
-        console.error('CountAPI error:', err);
-        document.getElementById('visit-count').textContent = 'N/A';
-      });
+    const slides = [
+      {
+        img: 'assets/images/paper1.png',
+        text: 'Peptide design for biomedical applications. Journal: Nature Chemistry.',
+        url: 'https://doi.org/example1'
+      },
+      {
+        img: 'assets/images/paper2.png',
+        text: 'Protein-protein interactions study. Journal: JACS.',
+        url: 'https://doi.org/example2'
+      },
+      {
+        img: 'assets/images/paper3.png',
+        text: 'Biophysical characterization of novel molecules. Journal: Angewandte Chemie.',
+        url: 'https://doi.org/example3'
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const container = document.getElementById('slideshow');
+      container.querySelectorAll('.slide').forEach(el => el.remove());
+
+      const slideData = slides[index];
+      const slideDiv = document.createElement('div');
+      slideDiv.className = 'slide';
+      slideDiv.style.display = 'flex';
+      slideDiv.style.width = '100%';
+
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'slide-image';
+      const imgEl = document.createElement('img');
+      imgEl.src = slideData.img;
+      imgEl.alt = 'Slide Image';
+      imgEl.onclick = () => window.open(slideData.url, '_blank');
+      imgDiv.appendChild(imgEl);
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'slide-text';
+      const p = document.createElement('p');
+      p.textContent = slideData.text;
+      p.onclick = () => window.open(slideData.url, '_blank');
+      textDiv.appendChild(p);
+
+      slideDiv.appendChild(imgDiv);
+      slideDiv.appendChild(textDiv);
+
+      container.appendChild(slideDiv);
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if(currentSlide < 0) currentSlide = slides.length - 1;
+      if(currentSlide >= slides.length) currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    // Initial display
+    showSlide(currentSlide);
+
+    // Automatic sliding every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
   </script>
 
 </body>
