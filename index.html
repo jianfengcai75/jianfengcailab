@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Research Group</title>
+  <title>Jianfeng Cai Research Group</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Banner -->
   <header class="banner">
-  <img src="assets/images/logo_cai1.png" alt="Banner Image" class="banner-img">
-</header>
-
+    <img src="assets/images/logo_cai1.png" alt="Banner Image" class="banner-img">
+  </header>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -25,31 +24,58 @@
       <li><a href="calendar.html">Group Calendar</a></li>
       <li><a href="alumni.html">Group Alumni</a></li>
       <li><a href="links.html">Useful Links</a></li>
-      <li><a href="links.html">Contact Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
 
   <!-- Main Content -->
   <main class="content">
-    <section>
+
+    <!-- Welcome Section -->
+    <section id="welcome">
       <h2>Welcome</h2>
-      <p>Welcome to our research group website. We focus on cutting-edge studies in chemistry, biophysics, and molecular engineering. Explore our research, publications, and group activities through the navigation above.</p>
+      <p>Welcome to the Jianfeng Cai Research Group! Our team explores cutting-edge studies in chemistry, biophysics, and molecular engineering. Browse our research projects, publications, and group activities through the navigation above.</p>
     </section>
 
-    <section>
+    <!-- About Section -->
+    <section id="about">
       <h2>About Our Work</h2>
-      <p>Our group is dedicated to advancing research in chemical sciences, focusing on innovative approaches to molecular design, peptide materials, and biomedical applications.</p>
+      <p>We are dedicated to advancing chemical and biomolecular research, focusing on innovative molecular design, peptide-based materials, and biomedical applications. Our lab emphasizes interdisciplinary approaches to solve complex scientific challenges.</p>
     </section>
 
-    <section>
+    <!-- Research Highlights Section -->
+    <section id="research-highlights">
       <h2>Research Highlights</h2>
-      <p>Here we summarize our recent research projects, discoveries, and collaborations. Each project explores novel scientific questions with potential real-world applications.</p>
+      <ul>
+        <li><strong>Peptide Design:</strong> Developing functional peptides for biomedical and materials applications.</li>
+        <li><strong>Protein Interactions:</strong> Studying molecular mechanisms of signaling pathways and protein-protein interactions.</li>
+        <li><strong>Biophysical Characterization:</strong> Applying advanced techniques to understand structure-function relationships.</li>
+      </ul>
+      <p>Each project in our group combines experimental and computational approaches, aiming for impactful real-world applications.</p>
     </section>
+
+    <!-- Optional: Add a small image or diagram -->
+    <section id="image-highlight">
+      <h2>Lab Snapshot</h2>
+      <img src="assets/images/lab_photo1.png" alt="Lab Snapshot" style="max-width:100%; border-radius:5px;">
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 My Research Group | Department of Chemistry, University Name</p>
+    <p>Page visits: <span id="visit-count">0</span></p>
+    <p>&copy; 2025 Jianfeng Cai Research Group</p>
   </footer>
+
+  <!-- CountAPI script -->
+  <script>
+    fetch('https://api.countapi.xyz/hit/jianfengcailab/visits')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visit-count').textContent = data.value;
+      });
+  </script>
+
 </body>
 </html>
