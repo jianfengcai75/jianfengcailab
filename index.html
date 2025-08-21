@@ -5,70 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jianfeng Cai Research Group</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    /* Slideshow container */
-    .slideshow-container {
-      max-width: 900px;
-      margin: 2rem auto;
-      display: flex;
-      background-color: #ffffff;
-      border-radius: 5px;
-      overflow: hidden;
-      border: 1px solid #e0e0e0;
-    }
-
-    /* Image container */
-    .slide-image {
-      width: 600px;
-      height: 400px;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .slide-image img {
-      max-width: 100%;
-      max-height: 100%;
-      cursor: pointer;
-    }
-
-    /* Text container */
-    .slide-text {
-      width: 300px;
-      padding: 1rem;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .slide-text p {
-      margin: 0.5rem 0;
-      cursor: pointer;
-    }
-
-    /* Navigation arrows */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 0.5rem;
-      margin-top: -1rem;
-      color: #000;
-      font-weight: bold;
-      font-size: 1.5rem;
-      transition: 0.3s;
-      user-select: none;
-      background-color: rgba(255,255,255,0.7);
-      border-radius: 50%;
-    }
-    .prev:hover, .next:hover {
-      background-color: rgba(200,200,200,0.8);
-    }
-    .prev { left: 0; }
-    .next { right: 0; }
-  </style>
+  
 </head>
 <body>
   <!-- Banner -->
@@ -112,31 +49,69 @@
     <!-- Welcome Section -->
     <section id="welcome">
       <h2>Welcome</h2>
-      <p>Welcome to the Jianfeng Cai Research Group! Our team explores cutting-edge studies in chemistry, biophysics, and molecular engineering. Browse our research projects, publications, and group activities through the navigation above.</p>
+      <p>Welcome to Cai Research Group! Our team explores research studies at the interface of chemistry and biology, involving chemical biology and bioorganic chemistry, medicinal chemistry, organic synthesis, biochemistry and biophysics, and biomaterials. </p>
     </section>
 
     <!-- About Section -->
-    <section id="about">
-      <h2>About Our Work</h2>
-      <p>We are dedicated to advancing chemical and biomolecular research, focusing on innovative molecular design, peptide-based materials, and biomedical applications. Our lab emphasizes interdisciplinary approaches to solve complex scientific challenges.</p>
-    </section>
+<section id="about">
+  <h2>About Our Work: AApeptides</h2>
+
+  <p>Our group advances chemical and biomolecular research, focusing on the design of new molecules for biomedical and material applications. A major goal is to create novel peptidomimetics and small molecules that regulate protein functions in key cellular processes. Studying how these compounds interact with proteins helps reveal mechanisms controlling cell activities.</p>
+
+  <p>We aim to develop compounds that could lead to new therapeutics for cancer, diabetes, infectious diseases, and neurodegenerative diseases such as Alzheimer's and Parkinson's. <span style="font-weight:bold; color:red;"> We have created a new class of sequence-specific peptidic foldamers, called AApeptides,</span> inspired by chiral PNA backbones. AApeptides can fold into defined secondary, tertiary, and quaternary structures and show strong potential for recognizing proteins and nucleic acids.</p>
+
+  <p>AApeptides are promising as tools or drug candidates to modulate disease-relevant protein-protein interactions and cell signaling. We use two complementary approaches: <span style="font-weight:bold; color:red;">structure-based design and combinatorial screening,</span> to identify AApeptides with desired functions.</p>
+
+  <p>Beyond drug discovery, we are also interested in fundamental science. Using the AApeptide scaffold, we aim to create new artificial proteins, including enzymes with predictable functions. We explore their applications in supramolecular chemistry through controlled self-assembly and in polymer materials via controlled synthesis.</p>
+
+  <p>The scheme below highlights our long-term efforts and key research directions. Please visit our research page for more detailed information.</p>
+
+  <!-- Add your image below -->
+  <img src="images/research_3.jpg" 
+       alt="Research Image" 
+       style="max-width:100%; border-radius:5px; margin: 1rem auto; display: block;">
+</section>
+
 
     <!-- Research Highlights Section -->
-    <section id="research-highlights">
-      <h2>Research Highlights</h2>
-      <ul>
-        <li><strong>Peptide Design:</strong> Developing functional peptides for biomedical and materials applications.</li>
-        <li><strong>Protein Interactions:</strong> Studying molecular mechanisms of signaling pathways and protein-protein interactions.</li>
-        <li><strong>Biophysical Characterization:</strong> Applying advanced techniques to understand structure-function relationships.</li>
-      </ul>
-      <p>Each project in our group combines experimental and computational approaches, aiming for impactful real-world applications.</p>
-    </section>
+<section id="research-highlights">
+  <h2>Research Areas</h2>
 
-    <!-- Optional: Add a small image or diagram -->
-    <section id="image-highlight">
-      <h2>Lab Snapshot</h2>
-      <img src="assets/images/lab_photo1.png" alt="Lab Snapshot" style="max-width:100%; border-radius:5px;">
-    </section>
+  <div class="research-grid">
+    <!-- Research Area 1 -->
+    <div class="research-card">
+      <img src="images/r1.jpg" alt="AApeptide Folding">
+      <h3>AApeptide Folding</h3>
+      <p>Exploration of secondary, tertiary and quaternary of AApeptides, based on which functions such as enzymatic activity, organic catalysis, and anti-body-like binding are investigated.</p>
+     <a href="research.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Research Area 2 -->
+    <div class="research-card">
+      <img src="images/r2.jpg" alt="Structure-Based Design">
+      <h3>Structure-Based Design</h3>
+      <p>Based on the helical structures of AApeptides, inhibitors are designed to disrupt disease-related protein-protein interactions such as cancer, diabetes, infectious diseases, neurodegenerative diseases.</p>
+       <a href="research.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Research Area 3 -->
+    <div class="research-card">
+      <img src="images/r3.jpg" alt="Combinatorial Screening">
+      <h3>Combinatorial Screening</h3>
+      <p>Making use of endless chemodiversity, AApeptide combinatorial library screening provides alternative approach to identify molecular probes and drug candidates.</p>
+     <a href="research.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Research Area 4 -->
+    <div class="research-card">
+      <img src="images/r4.jpg" alt="Supramolecular Chemistry">
+      <h3>Supramolecular Chemistry</h3>
+      <p>Precise manipulation of functional groups on AApeptides leads to controlled self-assembly. The richness in supramolecular chemistry could lead to various functional materials.</p>
+      <a href="research.html" class="read-more-btn">Read More</a>
+    </div>
+  </div>
+</section>
+
 
   </main>
 
@@ -166,91 +141,135 @@
 
   <!-- Slideshow JavaScript -->
   <script>
-    const slides = [
-      {
-        img: 'assets/images/paper1.png',
-        text: 'Peptide design for biomedical applications. Journal: Nature Chemistry.',
-        url: 'https://doi.org/example1'
-      },
-      {
-        img: 'assets/images/paper2.png',
-        text: 'Protein-protein interactions study. Journal: JACS.',
-        url: 'https://doi.org/example2'
-      },
-      {
-        img: 'assets/images/paper3.png',
-        text: 'Biophysical characterization of novel molecules. Journal: Angewandte Chemie.',
-        url: 'https://doi.org/example3'
-      }
-    ];
+const slides = [
+  {
+    img: 'images/slide_1.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'For the first time we demonstrate that Sulfonyl-gamma-AApeptides themselves are a new class of unnatural foldamer with left-handed helical structures. Angew. Chem. Int. Ed., 2018.',
+    url: 'https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201805184'
+  },
+  {
+    img: 'images/slide_2.jpg',
+    title: 'Sulfonyl-Gamma-AApeptides: 1:2 hydrids',
+    description: 'We show that 2:1 alpha/D-Sulfonyl-gamma-AA peptide hydrids form right-handed helical structures. J. Am. Chem. Soc., 2017.',
+    url: 'https://pubs.acs.org/doi/abs/10.1021/jacs.7b03007'
+  },
+  {
+    img: 'images/slide_3.jpg',
+    title: 'Sulfonyl-Gamma-AApeptides: 1:1 hydrids',
+    description: 'We show that 1:1 alpha/L-Sulfonyl-gamma-AA peptide hydrids form right-handed helical structures, and could form unprecedented tertiary structure. J. Am. Chem. Soc., 2018.',
+    url: 'https://pubs.acs.org/doi/abs/10.1021/jacs.7b11997'
+  },
+{
+    img: 'images/slide_4.jpg',
+    title: 'Sulfonyl-Gamma-AApeptides: 1:1 hydrids',
+    description: 'We show that 1:1 alpha/L-Sulfonyl-gamma-AA peptide hydrids form supramolecular assembly.Angew. Chem. Int. Ed., 2019.',
+    url: 'https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201903259'
+  },
+{
+    img: 'images/slide_5.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that Sulfonyl-gamma-AA peptides could mimic BCL9 helical domain and disrupt BCL-9/beta-catenin PPI. Proc. Natl. Acad. Sci. U. S. A., 2019.',
+    url: 'https://www.pnas.org/content/early/2019/05/13/1819663116'
+  },
+{
+    img: 'images/slide_6.jpg',
+    title: 'Sulfonyl-Gamma-AApeptides 1:1 hydrids',
+    description: 'We show that 1:1 alpha/L-Sulfonyl-gamma-AA peptide hydrids displying AIE and CPL. J. Am. Chem. Soc., 2019',
+    url: 'https://pubs.acs.org/doi/10.1021/jacs.9b05329'
+  },
+{
+    img: 'images/slide_7.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that homogeneous Sulfonyl-gamma-AA peptides could mimic GLP-1 in vitro and in vivo. Sci. Adv., 2020',
+    url: 'https://advances.sciencemag.org/content/6/20/eaaz4988'
+  },
+{
+    img: 'images/slide_8.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that homogeneous Sulfonyl-gamma-AA peptides could mimic VEGF and either up- or down- regulate angiogenesis. J. Am. Chem. Soc., 2022',
+    url: 'https://doi.org/10.1021/jacs.1c09571'
+  },
+{
+    img: 'images/slide_9.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that helical Sulfonyl-gamma-AA peptides could mimic HR2 and inhibit SARS-CoV-2 fusion. ACS Cent. Sci., 2023',
+    url: 'https://pubs.acs.org/doi/10.1021/acscentsci.3c00313'
+  },
+{
+    img: 'images/slide_10.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that helical Sulfonyl-gamma-AA peptides could mimic HIF-1alpha and inhibit HIF/p300 PPI. J. Am. Chem. Soc., 2023',
+    url: 'https://doi.org/10.1021/jacs.3c06694'
+  },
+{
+    img: 'images/slide_11.jpg',
+    title: 'Sulfonyl-gamma-AApeptides: Homogeneous',
+    description: 'We show that helical Sulfonyl-gamma-AA peptides could stablize Abeta helical structure. Proc. Natl. Acad. Sci. 2024',
+    url: 'https://www.pnas.org/doi/10.1073/pnas.2311733121'
+  },
+];
 
-    let currentSlide = 0;
+let currentSlide = 0;
 
-    function showSlide(index) {
-      const container = document.getElementById('slideshow');
-      container.querySelectorAll('.slide').forEach(el => el.remove());
+function showSlide(index) {
+  const container = document.getElementById('slideshow');
+  container.querySelectorAll('.slide').forEach(el => el.remove());
 
-      const slideData = slides[index];
-      const slideDiv = document.createElement('div');
-      slideDiv.className = 'slide';
-      slideDiv.style.display = 'flex';
-      slideDiv.style.width = '100%';
+  const slideData = slides[index];
+  const slideDiv = document.createElement('div');
+  slideDiv.className = 'slide';
+  slideDiv.style.display = 'flex';
+  slideDiv.style.width = '100%';
 
-      const imgDiv = document.createElement('div');
-      imgDiv.className = 'slide-image';
-      const imgEl = document.createElement('img');
-      imgEl.src = slideData.img;
-      imgEl.alt = 'Slide Image';
-      imgEl.onclick = () => window.open(slideData.url, '_blank');
-      imgDiv.appendChild(imgEl);
+  // Image
+  const imgDiv = document.createElement('div');
+  imgDiv.className = 'slide-image';
+  const imgEl = document.createElement('img');
+  imgEl.src = slideData.img;
+  imgEl.alt = 'Slide Image';
+  imgEl.style.cursor = 'pointer';
+  imgEl.onclick = () => window.open(slideData.url, '_blank');
+  imgDiv.appendChild(imgEl);
 
-      const textDiv = document.createElement('div');
-      textDiv.className = 'slide-text';
-      const p = document.createElement('p');
-      p.textContent = slideData.text;
-      p.onclick = () => window.open(slideData.url, '_blank');
-      textDiv.appendChild(p);
+  // Text
+  const textDiv = document.createElement('div');
+  textDiv.className = 'slide-text';
 
-      slideDiv.appendChild(imgDiv);
-      slideDiv.appendChild(textDiv);
+  const titleEl = document.createElement('h3');
+  titleEl.textContent = slideData.title;
+  titleEl.style.cursor = 'pointer';
+  titleEl.onclick = () => window.open(slideData.url, '_blank');
+  textDiv.appendChild(titleEl);
 
-      container.appendChild(slideDiv);
-    }
+  const descEl = document.createElement('p');
+  descEl.textContent = slideData.description;
+  descEl.style.cursor = 'pointer';
+  descEl.onclick = () => window.open(slideData.url, '_blank');
+  textDiv.appendChild(descEl);
 
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if(currentSlide < 0) currentSlide = slides.length - 1;
-      if(currentSlide >= slides.length) currentSlide = 0;
-      showSlide(currentSlide);
-    }
+  slideDiv.appendChild(imgDiv);
+  slideDiv.appendChild(textDiv);
 
-    // Initial display
-    showSlide(currentSlide);
+  container.appendChild(slideDiv);
+}
 
-    // Automatic sliding every 5 seconds
-    setInterval(() => {
-      changeSlide(1);
-    }, 5000);
-  </script>
+function changeSlide(direction) {
+  currentSlide += direction;
+  if(currentSlide < 0) currentSlide = slides.length - 1;
+  if(currentSlide >= slides.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
 
-  <!-- Hamburger Menu Script -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+// Initial display
+showSlide(currentSlide);
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active'); // X animation
-    });
+// Automatic sliding every 5 seconds
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
+</script>
 
-    const links = navLinks.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
