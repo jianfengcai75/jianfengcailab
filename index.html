@@ -76,20 +76,27 @@
     <img src="assets/images/logo_cai1.png" alt="Banner Image" class="banner-img">
   </header>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar with Hamburger Menu -->
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="members.html">Group Members</a></li>
-      <li><a href="photos.html">Group Photos</a></li>
-      <li><a href="news.html">Group News</a></li>
-      <li><a href="calendar.html">Group Calendar</a></li>
-      <li><a href="alumni.html">Group Alumni</a></li>
-      <li><a href="links.html">Useful Links</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+    <div class="navbar-container">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="members.html">Group Members</a></li>
+        <li><a href="photos.html">Group Photos</a></li>
+        <li><a href="news.html">Group News</a></li>
+        <li><a href="calendar.html">Group Calendar</a></li>
+        <li><a href="alumni.html">Group Alumni</a></li>
+        <li><a href="links.html">Useful Links</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Slideshow Section -->
@@ -224,6 +231,25 @@
     setInterval(() => {
       changeSlide(1);
     }, 5000);
+  </script>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active'); // X animation
+    });
+
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
   </script>
 
 </body>
