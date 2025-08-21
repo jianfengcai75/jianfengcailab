@@ -234,3 +234,60 @@ main section {
     padding: 20px 0;
   }
 }
+
+/* ===========================
+   HAMBURGER MENU
+   =========================== */
+.hamburger {
+  display: none; /* hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger to X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu hidden by default */
+.navbar ul {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+/* Show menu when active (mobile) */
+.navbar ul.active {
+  max-height: 1000px; /* large enough to show all links */
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .navbar ul {
+    max-height: 0; /* hidden by default on mobile */
+    flex-direction: column;
+  }
+}
