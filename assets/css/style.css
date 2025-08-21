@@ -15,7 +15,7 @@ body {
   font-family: var(--font-main);
   margin: 0;
   padding: 0;
-  background-color: #eaeaea;
+  background-color: #D6E4C5;
   color: #000000;
   font-size: 16px;
 }
@@ -92,9 +92,9 @@ body {
 
 main section {
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* smaller gap between sections */
   background-color: #ffffff;
-  padding: 1.5rem;
+  padding: 1rem; /* reduced padding */
   border-radius: 5px;
 }
 
@@ -105,7 +105,7 @@ main section {
   display: flex;
   max-width: 900px;
   height: 200px;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -158,8 +158,8 @@ main section {
   z-index: 10;
 }
 
-.prev { left: -50px; }
-.next { right: -50px; }
+.prev { left: 10px; }
+.next { right: 10px; }
 
 /* ===========================
    FOOTER
@@ -290,4 +290,137 @@ main section {
     max-height: 0; /* hidden by default on mobile */
     flex-direction: column;
   }
+}
+
+
+/* Reduce gap between slideshow and main content */
+.content {
+  margin-top: 1rem;   /* previously 2rem */
+}
+
+main section:first-of-type {
+  margin-top: 0;         /* remove top margin */
+  padding-top: 0.5rem;   /* optional */
+}
+
+main section:first-of-type h2 {
+  margin-top: 0;         /* remove heading margin */
+}
+
+main section h2 {
+  color: #2B6B2E;  /* SeaGreen */
+font-size: 1.8rem; /* bigger font size */
+text-align: center;   /* center the text */
+}
+
+main section p {
+  text-align: justify;
+}
+
+/* Research Highlights Grid */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  padding-left: 2rem;   /* push cards inward from left */
+  margin-top: 1rem;
+}
+
+/* Individual research card */
+.research-card {
+  width: 320px;            /* slightly wider than image */
+  background-color: #ffffff;
+  border-radius: 20px;     /* round corners */
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+
+/* Card image */
+.research-card img {
+  width: 310px;            /* original image width */
+  height: 236px;           /* original image height */
+  object-fit: cover;       /* cover the area without distortion */
+  display: block;
+  margin: 0 auto;          /* center horizontally */
+  border-radius: 15px 15px 0 0; /* round top corners */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Card title */
+.research-card h3 {
+  color: #2e7d32; /* green */
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+/* Card description */
+.research-card p {
+  font-size: 0.9rem;
+  padding: 0 0.75rem 1rem 0.75rem;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add shadow and hover effect to research cards */
+.research-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.research-card:hover {
+  transform: translateY(-5px); /* slight lift */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* stronger shadow on hover */
+}
+
+.read-more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(
+    135deg,
+    #f9f9f9 0%,
+    #d9d9d9 20%,
+    #b0b0b0 40%,
+    #e0e0e0 60%,
+    #c0c0c0 80%,
+    #fdfdfd 100%
+  );
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  border: 1px solid #a0a0a0;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.7),
+              inset 0 -2px 6px rgba(0,0,0,0.3),
+              0 4px 12px rgba(0,0,0,0.4);
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #d0d0d0 25%,
+    #a0a0a0 50%,
+    #dcdcdc 75%,
+    #fefefe 100%
+  );
+  transform: scale(1.08);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.9),
+              inset 0 -2px 6px rgba(0,0,0,0.4),
+              0 0 25px rgba(220,220,220,0.9),
+              0 0 40px rgba(180,180,180,0.6);
 }
