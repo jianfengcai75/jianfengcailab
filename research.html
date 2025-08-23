@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Banner -->
+  <header class="banner">
+    <img src="assets/images/logo_cai1.png" alt="Banner Image" class="banner-img">
+  </header>
+
+  <!-- Navigation Bar with Hamburger Menu -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="members.html">Group Members</a></li>
+        <li><a href="photos.html">Group Photos</a></li>
+        <li><a href="news.html">Group News</a></li>
+        <li><a href="calendar.html">Group Calendar</a></li>
+        <li><a href="alumni.html">Group Alumni</a></li>
+        <li><a href="links.html">Useful Links</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+
+
+<section id="Our-Research">
+  <h2>Our Research</h2>
+</section>
+    
+
+    <!-- Research Section 1 -->
+    <section class="research-section">
+      <img src="images/r1.jpg" alt="AApeptide Folding">
+      <div class="research-text">
+        <h3>AApeptide Folding</h3>
+        <p>We recently developed a new class of sequence-specific peptidomimetics - AApeptides - inspired by chiral PNA backbones. AApeptides fold into well-defined protein-like secondary and tertiary structures. Building on these results, we aim to design hierarchical AApeptide structures with predictable functions, such as artificial proteins with enzymatic activity.</p>
+        <p><strong>Examples:</strong><br>
+          <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201805184">Angew. Chem. Int. Ed., 2018</a>; 
+          <a href="https://pubs.acs.org/doi/abs/10.1021/jacs.7b11997">J. Am. Chem. Soc., 2018</a>; 
+          <a href="https://pubs.acs.org/doi/abs/10.1021/jacs.7b03007">J. Am. Chem. Soc., 2017</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Research Section 2 -->
+    <section class="research-section">
+      <img src="images/r2.jpg" alt="Structure-Based Design">
+      <div class="research-text">
+        <h3>Structure-Based Design</h3>
+        <p>Our lab develops molecular probes and drug candidates using Rational Design and Combinatorial Screening. With stable and diverse helical AApeptides, we design mimetics to disrupt cancer- and HIV-related protein interactions. We also create AApeptide-based HDP mimetics that kill bacteria with broad-spectrum activity and reduced resistance potential.</p>
+        <p><strong>Examples:</strong><br>
+          <a href="https://www.pnas.org/doi/10.1073/pnas.2311733121">PNAS, 2024</a>; 
+          <a href="https://doi.org/10.1021/jacs.3c06694">J. Am. Chem. Soc., 2023</a>; 
+          <a href="https://pubs.acs.org/doi/10.1021/acscentsci.3c00313">ACS Cent. Sci., 2023</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Research Section 3 -->
+    <section class="research-section">
+      <img src="images/r3.jpg" alt="Combinatorial Screening">
+      <div class="research-text">
+        <h3>Combinatorial Screening</h3>
+        <p>As a complement to Structure-Based Design, we also employ combinatorial library screening. By creating diverse AApeptide libraries, we identify selective binders for proteins and biomacromolecules that can modulate biological functions. These hits may serve as promising drug leads or candidates.</p>
+        <p><strong>Examples:</strong><br>
+          <a href="https://www.nature.com/articles/s41421-022-00455-6">Cell Dis., 2022</a>; 
+          <a href="https://doi.org/10.1016/j.apsb.2021.04.016">Acta Pharm. Sin. B, 2021</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Research Section 4 -->
+    <section class="research-section">
+      <img src="images/r4.jpg" alt="Supramolecular Chemistry">
+      <div class="research-text">
+        <h3>Supramolecular Chemistry</h3>
+        <p>AApeptides can form defined structures that assemble into functional supramolecular materials when tailored with specific side chains. We design and synthesize diverse AApeptide-based assemblies to explore their potential in biomaterials and nanotechnology applications.</p>
+        <p><strong>Examples:</strong><br>
+          <a href="https://www.nature.com/articles/s41467-025-58589-6">Nat. Commun., 2025</a>; 
+          <a href="https://pubs.acs.org/doi/10.1021/jacs.9b05329">J. Am. Chem. Soc., 2019</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Jianfeng Cai Research Group</p>
+  </footer>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
