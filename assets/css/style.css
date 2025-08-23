@@ -85,17 +85,36 @@ body {
    MAIN CONTENT
    =========================== */
 .content {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 1080px;
+  margin: 0 auto;      /* remove gap around content */
+  padding: 0 1rem;     /* optional horizontal padding */
 }
 
+/* Sections inside main */
 main section {
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 1rem; /* smaller gap between sections */
+  margin: 0 0 1rem 0;  /* remove top margin, keep bottom margin small */
   background-color: #ffffff;
-  padding: 1rem; /* reduced padding */
+  padding: 1rem;       /* inner padding for readability */
   border-radius: 5px;
+}
+
+/* Remove top margin for the first section and its heading */
+main section:first-of-type {
+  margin-top: 0;
+  padding-top: 1rem;  /* optional, keeps inner padding */
+}
+
+main section:first-of-type h2 {
+  margin-top: 0;
+}
+
+/* Example: adjust heading inside sections globally */
+main section h2 {
+  color: #2B6B2E;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem; /* space below heading */
 }
 
 /* ===========================
@@ -103,9 +122,9 @@ main section {
    =========================== */
 .slideshow-container {
   display: flex;
-  max-width: 900px;
+  max-width: 1080px;
   height: 200px;
-  margin: 0.5rem auto;
+  margin: 0rem auto;
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -114,13 +133,13 @@ main section {
 }
 
 .slide-image {
-  width: 600px;
+  width: 760px;
   height: 100%;
   object-fit: cover;
 }
 
 .slide-text {
-  width: 300px;
+  width: 320px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -321,8 +340,8 @@ main section p {
 .research-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-  padding-left: 2rem;   /* push cards inward from left */
+  gap: 0rem;
+  padding-left: 0rem;   /* push cards inward from left */
   margin-top: 1rem;
 }
 
@@ -423,4 +442,283 @@ main section p {
               inset 0 -2px 6px rgba(0,0,0,0.4),
               0 0 25px rgba(220,220,220,0.9),
               0 0 40px rgba(180,180,180,0.6);
+}
+
+/* ===========================
+   RESEARCH PAGE SECTIONS
+   =========================== */
+.research-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0.25rem 0;
+  gap: 2rem;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.research-section img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.research-section .research-text {
+  flex: 1;
+}
+
+.research-section h3 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.research-section p {
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .research-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .research-section img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* ===========================
+   RESEARCH PAGE HEADING
+   =========================== */
+#Our-Research {
+  margin: 0;           /* remove default top/bottom margin */
+  padding: 0.5rem 0;   /* small vertical padding */
+}
+
+#Our-Research h2 {
+  margin: 0;           /* remove heading margins */
+  font-size: 2rem;
+  text-align: center;
+  color: #2e7d32;
+}
+
+#Our-Research {
+  margin-top: -1rem; /* adjust until it touches navbar */
+}
+
+
+/* ===========================
+   NEWS HEADING
+   =========================== */
+
+#News {
+  margin-top: -1rem; /* adjust until it touches navbar */
+padding: 1rem 4rem; /* 1rem top/bottom, 2rem left/right */
+}
+
+
+/* Alumni tables */
+.alumni-table {
+  width: 100%;
+  max-width: 1060px;   /* adjust if needed */
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #ffffff;
+  table-layout: fixed; /* ensures column widths are respected */
+}
+
+.alumni-table th,
+.alumni-table td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word; /* prevents overflow */
+}
+
+.alumni-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center; /* <-- center text inside table headers */
+  vertical-align: middle; /* <-- keeps text vertically centered */
+}
+
+
+/* body cells */
+.alumni-table td {
+  background-color: #ffffff; /* force white */
+  text-align: left; /* keep text aligned left */
+}
+
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .alumni-table {
+    table-layout: auto; /* let columns resize naturally */
+    font-size: 0.85rem;
+  }
+
+  .alumni-table col {
+    width: auto !important; /* override fixed widths */
+  }
+}
+
+
+/* Member table */
+.member-table {
+  width: 100%;
+  max-width: 900px;   /* adjust as needed */
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #ffffff;
+}
+
+.member-table td {
+  border: 1px solid #333;  /* adds borders like alumni-table */
+  padding: 15px;
+  vertical-align: top;
+}
+
+.member-table img {
+  border-radius: 8px;     /* rounded corners for photo */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;         /* center image in its cell */
+}
+
+.member-table strong {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+
+#cai h3,
+#cai p {
+  padding-left: 4.5rem; /* moves only the text below the table 1rem from the left */
+}
+
+
+/* =============================
+   Photo Gallery Styling
+   ============================= */
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* space between photos */
+  padding: 2rem 1rem; /* top/bottom and left/right padding */
+}
+
+.photo-gallery figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery figure:hover {
+  transform: scale(1.03);
+}
+
+.photo-gallery img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.photo-gallery figcaption {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.photo-gallery figcaption a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.photo-gallery figcaption a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===========================
+   Publications Section
+   =========================== */
+#publications {
+  width: 80%;
+  margin: 0 auto 50px auto;  /* Center and bottom spacing */
+  background-color: #fff;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+#publications h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#publications h3 {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  color: #337136;
+}
+
+#publications h4 {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  color: #337136;
+}
+
+.publication {
+  margin-bottom: 25px;  /* spacing between publications */
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #222;
+}
+
+.publication a {
+  color: #1a73e8;  /* link color */
+  text-decoration: none;
+}
+
+.publication a:hover {
+  text-decoration: underline;
+}
+
+.publication img {
+  display: block;
+  margin: 10px auto;  /* center image */
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;  /* optional border for better appearance */
+  border-radius: 4px;       /* optional rounded corners */
 }
