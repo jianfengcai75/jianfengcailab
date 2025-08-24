@@ -723,3 +723,29 @@ padding: 1rem 4rem; /* 1rem top/bottom, 2rem left/right */
   border: 1px solid #ccc;  /* optional border for better appearance */
   border-radius: 4px;       /* optional rounded corners */
 }
+
+
+/* ===========================
+   Search-Container region
+   =========================== */
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+justify-content: center
+}
+
+.search-container input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-container label {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: #555;
+}
