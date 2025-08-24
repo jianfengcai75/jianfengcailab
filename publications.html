@@ -1397,6 +1397,71 @@ setInterval(() => {
 }, 5000);
 </script>
 
+
+<script>
+// ==========================
+// Automatically add data-year
+// ==========================
+document.querySelectorAll('.publication').forEach(pub => {
+    // Try to match a 4-digit year
+    let yearMatch = pub.textContent.match(/(19|20)\d{2}/);
+    if (yearMatch) {
+        pub.setAttribute('data-year', yearMatch[0]);
+    }
+});
+
+// ==========================
+// Create search field
+// ==========================
+const pubContainer = document.getElementById('publications');
+
+const searchDiv = document.createElement('div');
+searchDiv.style.margin = '20px 0';
+searchDiv.style.display = 'flex';
+searchDiv.style.alignItems = 'center';
+searchDiv.style.gap = '10px';
+
+const searchInput = document.createElement('input');
+searchInput.type = 'text';
+searchInput.placeholder = 'Enter year';
+searchInput.style.padding = '5px 10px';
+searchInput.style.fontSize = '1.2rem';
+searchInput.style.width = '120px';
+
+const searchLabel = document.createElement('span');
+searchLabel.textContent = 'Filter by year';
+searchLabel.style.fontSize = '1.2rem';
+searchLabel.style.color = '#337136';
+
+searchDiv.appendChild(searchInput);
+searchDiv.appendChild(searchLabel);
+
+// Place the search bar right after the Publications title (h2)
+const heading = pubContainer.querySelector('h2');
+heading.insertAdjacentElement('afterend', searchDiv);
+
+// Add a class for styling
+searchDiv.classList.add('search-container');
+
+
+// ==========================
+// Filter publications
+// ==========================
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    document.querySelectorAll('.publication').forEach(pub => {
+        if (!query || pub.getAttribute('data-year') === query) {
+            pub.style.display = '';
+        } else {
+            pub.style.display = 'none';
+        }
+    });
+});
+</script>
+
+
+
+
 <script>
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
