@@ -672,6 +672,7 @@ padding: 1rem 4rem; /* 1rem top/bottom, 2rem left/right */
    Publications Section
    =========================== */
 #publications {
+  width: 100%
   max-width: 1080px;
   margin: 0 auto 50px auto;  /* Center and bottom spacing */
   background-color: #fff;
